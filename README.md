@@ -31,4 +31,12 @@ pip install -r requirements.txt
 5. Clique em "Iniciar Escaneamento"
 6. Analise os resultados na tabela
 
----
+## ⚡ Melhorando o Desempenho
+O escaneamento é realizado de forma **paralela**, utilizando **múltiplas threads** para acelerar o processo.  
+Por padrão, o programa usa **10 threads**, conforme definido no código:
+
+```python
+with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+```
+
+Caso queira tornar o escaneamento **mais rápido**, aumente o valor de `max_workers` 
